@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net45;net5.0</TargetFrameworks>
+    <OutputPath>..\BinTest</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NewLife.Core" Version="8.11.2021.1204" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewLife.RocketMQ\NewLife.RocketMQ.csproj" />
+  </ItemGroup>
+
+</Project>

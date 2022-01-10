@@ -1,0 +1,56 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: valor-poc-{WHO}-{INSTANCE}-{QUEUE}
+  namespace: valor
+data:  
+  rabbit.queue: "{QUEUE}"
+  rabbit.user: "{RABBIT_USER}"
+  rabbit.password: "{RABBIT_PASSWORD}"
+  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: valor-poc-{WHO}-{INSTANCE}-{QUEUE}
+  namespace: valor
+  labels:
+    app: valor-poc-{WHO}-{INSTANCE}-{QUEUE}
+spec:
+  selector:
+    matchLabels:
+      app: valor-poc-{WHO}-{INSTANCE}-{QUEUE}
+  template:
+    metadata:
+      labels:
+        app: valor-poc-{WHO}-{INSTANCE}-{QUEUE}
+    spec:
+      imagePullSecrets:
+      - name: registry-docker
+      containers:
+      - name: valor-poc-{WHO}-{INSTANCE}-{QUEUE}
+        image: harbor.devops.valorpro.com.br/valor/valor-poc-{WHO}:{COMMIT}
+        env:
+        - name: RABBIT_USER 
+          valueFrom:
+            configMapKeyRef:
+              name: valor-poc-{WHO}-{INSTANCE}-{QUEUE}        
+              key: rabbit.user
+        - name: RABBIT_PASSWORD 
+          valueFrom:
+            configMapKeyRef:
+              name: valor-poc-{WHO}-{INSTANCE}-{QUEUE}          
+              key: rabbit.password
+        - name: QUEUE
+          valueFrom:
+            configMapKeyRef:
+              name: valor-poc-{WHO}-{INSTANCE}-{QUEUE}
+              key: rabbit.queue        
+        - name: ASPNETCORE_URLS
+          value: "http://+80;http://+:9000"
+        ports:
+        - containerPort: 80
+          name: http
+        - containerPort: 443
+          name: https

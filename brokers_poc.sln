@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FA36EFF4-6965-41DB-B9D9-2462026983A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{5D296765-7D4E-4AA9-B3DF-A529C0644B68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewLife.RocketMQ", "src\libs\NewLife.RocketMQ\NewLife.RocketMQ\NewLife.RocketMQ.csproj", "{D1A50124-B5C9-4B29-95EE-7F7B19BA963F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rabbit", "Rabbit", "{7847C3EC-61C9-418E-9B7B-122ACE75DD12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rocket", "Rocket", "{AAB4D223-3EA6-439A-AAB7-888EC09A0F74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "publisher-rocket-mq", "src\rocketmq\publisher-rocket-mq\publisher-rocket-mq.csproj", "{088E3B15-3A04-4E7E-93B0-119014C479CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{A134AF82-A456-49D5-893C-0930A8C6B283}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "consumer-rabbit-mq", "src\rabbitmq\consumer-rabbit-mq\consumer-rabbit-mq.csproj", "{55B69168-CC59-4DBF-AD50-6C2D75017A2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "consumer-with-worker-rabbit-mq", "src\rabbitmq\consumer-with-worker-rabbit-mq\consumer-with-worker-rabbit-mq.csproj", "{5199AFA0-B63C-4DB6-941D-A918348DC331}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "publisher-rabbit-mq", "src\rabbitmq\publisher-rabbit-mq\publisher-rabbit-mq.csproj", "{5185F16F-3355-4F45-BFE1-B2014298703F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "consumer-kafka", "src\kafka\consumer-kafka\consumer-kafka.csproj", "{B428DF75-20BD-481B-8177-20A9F6EDC707}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "producer-kafka", "src\kafka\producer-kafka\producer-kafka.csproj", "{23175867-B59E-49D0-A215-ED45AA5D1303}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1A50124-B5C9-4B29-95EE-7F7B19BA963F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A50124-B5C9-4B29-95EE-7F7B19BA963F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A50124-B5C9-4B29-95EE-7F7B19BA963F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A50124-B5C9-4B29-95EE-7F7B19BA963F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{088E3B15-3A04-4E7E-93B0-119014C479CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088E3B15-3A04-4E7E-93B0-119014C479CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088E3B15-3A04-4E7E-93B0-119014C479CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088E3B15-3A04-4E7E-93B0-119014C479CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B69168-CC59-4DBF-AD50-6C2D75017A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B69168-CC59-4DBF-AD50-6C2D75017A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B69168-CC59-4DBF-AD50-6C2D75017A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B69168-CC59-4DBF-AD50-6C2D75017A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5199AFA0-B63C-4DB6-941D-A918348DC331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5199AFA0-B63C-4DB6-941D-A918348DC331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5199AFA0-B63C-4DB6-941D-A918348DC331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5199AFA0-B63C-4DB6-941D-A918348DC331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5185F16F-3355-4F45-BFE1-B2014298703F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5185F16F-3355-4F45-BFE1-B2014298703F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5185F16F-3355-4F45-BFE1-B2014298703F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5185F16F-3355-4F45-BFE1-B2014298703F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B428DF75-20BD-481B-8177-20A9F6EDC707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B428DF75-20BD-481B-8177-20A9F6EDC707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B428DF75-20BD-481B-8177-20A9F6EDC707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B428DF75-20BD-481B-8177-20A9F6EDC707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23175867-B59E-49D0-A215-ED45AA5D1303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23175867-B59E-49D0-A215-ED45AA5D1303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23175867-B59E-49D0-A215-ED45AA5D1303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23175867-B59E-49D0-A215-ED45AA5D1303}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D296765-7D4E-4AA9-B3DF-A529C0644B68} = {FA36EFF4-6965-41DB-B9D9-2462026983A9}
+		{D1A50124-B5C9-4B29-95EE-7F7B19BA963F} = {5D296765-7D4E-4AA9-B3DF-A529C0644B68}
+		{7847C3EC-61C9-418E-9B7B-122ACE75DD12} = {FA36EFF4-6965-41DB-B9D9-2462026983A9}
+		{AAB4D223-3EA6-439A-AAB7-888EC09A0F74} = {FA36EFF4-6965-41DB-B9D9-2462026983A9}
+		{088E3B15-3A04-4E7E-93B0-119014C479CF} = {AAB4D223-3EA6-439A-AAB7-888EC09A0F74}
+		{A134AF82-A456-49D5-893C-0930A8C6B283} = {FA36EFF4-6965-41DB-B9D9-2462026983A9}
+		{55B69168-CC59-4DBF-AD50-6C2D75017A2B} = {7847C3EC-61C9-418E-9B7B-122ACE75DD12}
+		{5199AFA0-B63C-4DB6-941D-A918348DC331} = {7847C3EC-61C9-418E-9B7B-122ACE75DD12}
+		{5185F16F-3355-4F45-BFE1-B2014298703F} = {7847C3EC-61C9-418E-9B7B-122ACE75DD12}
+		{B428DF75-20BD-481B-8177-20A9F6EDC707} = {A134AF82-A456-49D5-893C-0930A8C6B283}
+		{23175867-B59E-49D0-A215-ED45AA5D1303} = {A134AF82-A456-49D5-893C-0930A8C6B283}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85138D9F-5233-40F8-A6C7-F571BC9BF890}
+	EndGlobalSection
+EndGlobal
