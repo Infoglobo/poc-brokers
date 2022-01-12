@@ -18,35 +18,43 @@ namespace kafka
             {
                 var config = new ConsumerConfig
                 {
-                    BootstrapServers = "10.10.251.159:9092",
-                    GroupId = "gCotacoes",
-
-                    EnableAutoCommit = true, // (the default)
-                    EnableAutoOffsetStore = false
+                    BootstrapServers = "10.33.0.68:9092",
+                    GroupId = "gValor",
+                    AutoOffsetReset = AutoOffsetReset.Earliest,
+                    EnableAutoOffsetStore = false,
+                    EnableAutoCommit = true,
                 };
 
                 using (var consumer = new ConsumerBuilder<string, string>(config).Build())
                 {
-                    consumer.Subscribe("cotacoes");
+                    consumer.Subscribe("first_topic");
                     try
                     {
                         int qtdeMsgs = 0;
                         while (true)
                         {
-                            if (qtdeMsgs > 50000)
+
+                            if (qtdeMsgs > 150000)
                             {
                                 Console.WriteLine($"Consumed {qtdeMsgs} in {DateTime.Now.ToString("hh.mm.ss.ffffff")}");
-
                                 qtdeMsgs = 0;
                             }
-                            var msg = consumer.Consume(stoppingToken);
-                            qtdeMsgs++;
+
+                            var msg = consumer.Consume(TimeSpan.FromSeconds(1));
+                            if (msg != null)
+                                qtdeMsgs++;
+                            //Console.WriteLine($"Consumed {qtdeMsgs}");
                         }
-                        //stopWatch.Stop();
                     }
+
                     catch (OperationCanceledException)
                     {
-                        //exception might have occurred since Ctrl-C was pressed.
+                        Console.WriteLine("Stopping");
+                        consumer.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
                     }
                     finally
                     {
